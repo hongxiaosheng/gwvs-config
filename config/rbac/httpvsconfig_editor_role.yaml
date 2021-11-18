@@ -1,0 +1,24 @@
+# permissions for end users to edit httpvsconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: httpvsconfig-editor-role
+rules:
+- apiGroups:
+  - gwvs-config.cmit.com
+  resources:
+  - httpvsconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gwvs-config.cmit.com
+  resources:
+  - httpvsconfigs/status
+  verbs:
+  - get

@@ -1,0 +1,20 @@
+# permissions for end users to view httpvsconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: httpvsconfig-viewer-role
+rules:
+- apiGroups:
+  - gwvs-config.cmit.com
+  resources:
+  - httpvsconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - gwvs-config.cmit.com
+  resources:
+  - httpvsconfigs/status
+  verbs:
+  - get

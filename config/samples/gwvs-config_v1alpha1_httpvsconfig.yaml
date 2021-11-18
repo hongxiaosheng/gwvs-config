@@ -1,0 +1,18 @@
+apiVersion: gwvs-config.cmit.com/v1alpha1
+kind: HttpvsConfig
+metadata:
+  name: httpvsconfig-sample
+  namespace: test
+spec:
+  # Add fields here
+  namespace: test
+  hosts:
+    - "test1.cloud"
+    - "test2.cloud"
+  route:
+    - uri:
+        - "/test1"
+        - "/test2"
+      service: testsvc
+      port: 80
+
